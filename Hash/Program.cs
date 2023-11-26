@@ -54,6 +54,10 @@ class Program
 						to_output = "MPX_" + name;
 						to_hash = "MP0_" + name;
 					}
+					else
+					{
+						continue;
+					}
 
 					StringBuilder sb = new StringBuilder();
 
@@ -65,7 +69,7 @@ class Program
 		}
 
 		// Read the text file content into a string array
-		string[] lines = File.ReadAllLines(@"D:\Backup\Stuff\GTA V\stats\awd_bool_stats.txt");
+		string[] lines = File.ReadAllLines(@"D:\Backup\Stuff\GTA V\stats\bool_stats.txt");
 
 		// Create a dictionary of key-value pairs from the array
 		Dictionary<int, uint> dict = new Dictionary<int, uint>();
@@ -86,7 +90,7 @@ class Program
 			}
 		}
 
-		using (StreamWriter outputFile = new StreamWriter(@"D:\Backup\Stuff\GTA V\awd_bool_stats.txt"))
+		using (StreamWriter outputFile = new StreamWriter(@"D:\Backup\Stuff\GTA V\bool_stats.txt"))
 		{
 			foreach (KeyValuePair<int, uint> kvp in dict)
 			{
